@@ -14,6 +14,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.tjnuman.foddies.Adapter.PlateAdapter;
 import com.tjnuman.foddies.Model.PlateModel;
@@ -26,12 +27,14 @@ public class MainActivity extends AppCompatActivity {
     List<PlateModel> plateModelList;
     PlateAdapter plateAdapter;
     LinearLayout linearLayoutEmail;
+    TextView skip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        skip = findViewById(R.id.skip);
         recyclerView =findViewById(R.id.recyclerview);
         linearLayoutEmail =  findViewById(R.id.linearLayoutEmail);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this){
@@ -71,17 +74,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
         plateModelList  = new ArrayList<>();
-        plateModelList.add(new PlateModel(R.drawable.categories));
-        plateModelList.add(new PlateModel(R.drawable.categories));
-        plateModelList.add(new PlateModel(R.drawable.categories));
-        plateModelList.add(new PlateModel(R.drawable.categories));
-        plateModelList.add(new PlateModel(R.drawable.categories));
-        plateModelList.add(new PlateModel(R.drawable.categories));
-        plateModelList.add(new PlateModel(R.drawable.categories));
-        plateModelList.add(new PlateModel(R.drawable.categories));
-        plateModelList.add(new PlateModel(R.drawable.categories));
-        plateModelList.add(new PlateModel(R.drawable.categories));
-        plateModelList.add(new PlateModel(R.drawable.categories));
+        plateModelList.add(new PlateModel(R.drawable.meal));
+        plateModelList.add(new PlateModel(R.drawable.milanesa));
+        plateModelList.add(new PlateModel(R.drawable.vegetables));
+        plateModelList.add(new PlateModel(R.drawable.hickenrice));
+        plateModelList.add(new PlateModel(R.drawable.meale));
+        plateModelList.add(new PlateModel(R.drawable.breakfast));
+        plateModelList.add(new PlateModel(R.drawable.healthy));
+        plateModelList.add(new PlateModel(R.drawable.masalapapad));
+        plateModelList.add(new PlateModel(R.drawable.pizza));
+        plateModelList.add(new PlateModel(R.drawable.noodles));
+        plateModelList.add(new PlateModel(R.drawable.curry));
+        plateModelList.add(new PlateModel(R.drawable.sushi));
+        plateModelList.add(new PlateModel(R.drawable.milanesa));
+        plateModelList.add(new PlateModel(R.drawable.snack));
 
         plateAdapter = new PlateAdapter(this,plateModelList);
         recyclerView.setAdapter(plateAdapter);
@@ -95,6 +101,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,EmailRegisterActivity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
             }
         });
 
