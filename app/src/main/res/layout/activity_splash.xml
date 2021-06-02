@@ -10,16 +10,15 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
-        android:layout_width="236dp"
-        android:layout_height="221dp"
+        android:layout_width="250dp"
+        android:layout_height="224dp"
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:lottie_autoPlay="false"
+        app:lottie_autoPlay="true"
         app:lottie_loop="false"
-        app:lottie_rawRes="@raw/foodtoss"
-         />
+        app:lottie_rawRes="@raw/food" />
 
     <ImageView
         android:id="@+id/image"
