@@ -35,7 +35,6 @@ public class HomeActivity extends AppCompatActivity {
                         break;
 
                 }
-
                 return true;
             }
         });
