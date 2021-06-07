@@ -24,19 +24,10 @@ public class OrdersFragment extends Fragment implements View.OnClickListener {
         // Required empty public constructor
     }
     DrawerLayout drawerLayout;
-    ImageView navigationBar,iv_logout;
-    LinearLayout ll_First, ll_Second,ll_Third, ll_Fourth,ll_Fifth,ll_Sixth,ll_Seventh;
+    ImageView navigationBar;
     NavigationView navigationView;
-    TextView tv_logout;
     View  view;
-
-
-
-
-
-// video was in 18:48 second.
-
-
+    TextView One,Two;
 
 
     @Override
@@ -48,29 +39,19 @@ public class OrdersFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         return inflater.inflate(R.layout.fragment_orders, container, false);
 
     }
 
     private void onSetNavigationDrawerEvents() {
-        drawerLayout = (DrawerLayout) view.findViewById(R.id.drawerLayout);
-        navigationView = (NavigationView) view.findViewById(R.id.navigationView);
-        drawerLayout.openDrawer(GravityCompat.START);
+        drawerLayout =  view.findViewById(R.id.drawerLayout);
+        navigationView = view.findViewById(R.id.navigationView);
         navigationBar = (ImageView) view.findViewById(R.id.navigationBar);
-        iv_logout = (ImageView) view.findViewById(R.id.iv_logout);
-        tv_logout = (TextView) view.findViewById(R.id.tv_logout);
-
+        One = view.findViewById(R.id.tv_one);
+        Two = view.findViewById(R.id.tv_two);
         navigationBar.setOnClickListener(this);
-        ll_First.setOnClickListener(this);
-        ll_Second.setOnClickListener(this);
-        ll_Third.setOnClickListener(this);
-        ll_Fourth.setOnClickListener(this);
-        ll_Fifth.setOnClickListener(this);
-        ll_Sixth.setOnClickListener(this);
-        ll_Seventh.setOnClickListener(this);
-        iv_logout.setOnClickListener(this);
-        tv_logout.setOnClickListener(this);
+        One.setOnClickListener(this);
+        Two.setOnClickListener(this);
     }
 
     @Override
@@ -80,20 +61,13 @@ public class OrdersFragment extends Fragment implements View.OnClickListener {
                 drawerLayout.openDrawer(navigationView, true);
                 break;
 
-            case R.id.iv_logout:
-                showToast("iv_logout");
-                drawerLayout.closeDrawer(navigationView, true);
+            case R.id.tv_one:
+                Toast.makeText(getContext(), "One", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.tv_logout:
-                showToast("tv_logout");
-                drawerLayout.closeDrawer(navigationView, true);
+            case R.id.tv_two:
+                Toast.makeText(getContext(), "Two", Toast.LENGTH_SHORT).show();
                 break;
-            default:
-                showToast("Default");
-                drawerLayout.closeDrawer(navigationView, true);
-                break;
-
-        }
+                  }
     }
 
     private void showToast(String message){
