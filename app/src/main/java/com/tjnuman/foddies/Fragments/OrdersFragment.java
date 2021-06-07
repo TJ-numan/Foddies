@@ -73,7 +73,7 @@ public class OrdersFragment extends Fragment implements View.OnClickListener {
     private void showToast(String message){
         //Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }
-    
+
     @Override
     public void onDestroy() {
         super.onDestroy();

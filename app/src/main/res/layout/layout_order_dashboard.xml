@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFF">
+
+    android:background="#9CF66B">
 
     <ImageView
         android:id="@+id/navigationBar"
@@ -14,7 +15,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:contentDescription="Navigation Bar"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@drawable/favorite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
