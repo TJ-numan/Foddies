@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +28,8 @@ public class OrdersFragment extends Fragment implements View.OnClickListener {
     ImageView navigationBar;
     NavigationView navigationView;
     View  view;
-    TextView One,Two;
+    RelativeLayout LoginSingup,bookmarks;
+    TextView yourOrder,yourfavorite,addressbook,onlineHelp,feedBack,Report,Rateus;
 
 
     @Override
@@ -48,11 +50,26 @@ public class OrdersFragment extends Fragment implements View.OnClickListener {
         drawerLayout =  view.findViewById(R.id.drawerLayout);
         navigationView = view.findViewById(R.id.navigationView);
         navigationBar = (ImageView) view.findViewById(R.id.navigationBar);
-        One = view.findViewById(R.id.tv_one);
-        Two = view.findViewById(R.id.tv_two);
+        LoginSingup = view.findViewById(R.id.relativeLayout2);
+        bookmarks = view.findViewById(R.id.relativeLayout3);
+        yourOrder = view.findViewById(R.id.YourOrder);
+        yourfavorite = view.findViewById(R.id.yourFavorite);
+        addressbook = view.findViewById(R.id.addressBook);
+        onlineHelp = view.findViewById(R.id.OnlineHelp);
+        feedBack = view.findViewById(R.id.feedback);
+        Report = view.findViewById(R.id.Report);
+        Rateus = view.findViewById(R.id.RateUs);
+
         navigationBar.setOnClickListener(this);
-        One.setOnClickListener(this);
-        Two.setOnClickListener(this);
+        LoginSingup.setOnClickListener(this);
+        bookmarks.setOnClickListener(this);
+        yourfavorite.setOnClickListener(this);
+        yourOrder.setOnClickListener(this);
+        addressbook.setOnClickListener(this);
+        onlineHelp.setOnClickListener(this);
+        feedBack.setOnClickListener(this);
+        Report.setOnClickListener(this);
+        Rateus.setOnClickListener(this);
     }
 
     @Override
@@ -62,12 +79,12 @@ public class OrdersFragment extends Fragment implements View.OnClickListener {
                 drawerLayout.openDrawer(navigationView, true);
                 break;
 
-            case R.id.tv_one:
-                Toast.makeText(getContext(), "One", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.tv_two:
-                Toast.makeText(getContext(), "Two", Toast.LENGTH_SHORT).show();
-                break;
+//            case R.id.tv_one:
+//                Toast.makeText(getContext(), "One", Toast.LENGTH_SHORT).show();
+//                break;
+//            case R.id.tv_two:
+//                Toast.makeText(getContext(), "Two", Toast.LENGTH_SHORT).show();
+//                break;
                   }
     }
 

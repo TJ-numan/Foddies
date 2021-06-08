@@ -20,8 +20,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginEnd="231dp"
             android:layout_marginRight="231dp"
             android:layout_marginBottom="0dp"
@@ -67,8 +67,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginEnd="231dp"
             android:layout_marginRight="231dp"
             android:layout_marginBottom="0dp"
@@ -99,23 +99,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout3" />
 
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/relativeLayout4"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/divider1">
     <RelativeLayout
         android:layout_marginTop="8dp"
-        android:id="@+id/relativeLayout4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider1">
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginEnd="231dp"
             android:layout_marginRight="231dp"
             android:layout_marginBottom="0dp"
@@ -135,4 +139,136 @@
             android:src="@drawable/right"
             app:tint="#7A7878" />
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/YourOrder"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_width="wrap_content"
+        android:textSize="16dp"
+        android:drawablePadding="8dp"
+        android:text="Your Order List"
+        android:drawableLeft="@drawable/list"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/yourFavorite"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_width="wrap_content"
+        android:textSize="16dp"
+        android:drawablePadding="8dp"
+        android:text="Your Favorite Order"
+        android:drawableLeft="@drawable/favoriteorder"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/addressBook"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_width="wrap_content"
+        android:textSize="16dp"
+        android:drawablePadding="8dp"
+        android:text="Address Book"
+        android:drawableLeft="@drawable/home"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/OnlineHelp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_width="wrap_content"
+        android:textSize="16dp"
+        android:drawablePadding="8dp"
+        android:text="Online Order Help"
+        android:drawableLeft="@drawable/help"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>
+
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="8dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout4" />
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/relativeLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2">
+        <RelativeLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="231dp"
+                android:layout_marginRight="231dp"
+                android:layout_marginBottom="0dp"
+                android:text="About"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:src="@drawable/right"
+                app:tint="#7A7878" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/feedback"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_width="wrap_content"
+            android:textSize="16dp"
+            android:drawablePadding="8dp"
+            android:text="Give Feedback"
+            android:drawableLeft="@drawable/feedback"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/Report"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_width="wrap_content"
+            android:textSize="16dp"
+            android:drawablePadding="8dp"
+            android:text="Report a Problem"
+            android:drawableLeft="@drawable/report"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/RateUs"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_width="wrap_content"
+            android:textSize="16dp"
+            android:drawablePadding="8dp"
+            android:text="Rate us on Playstore"
+            android:drawableLeft="@drawable/rate"
+            android:layout_height="wrap_content"/>
+
+
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
