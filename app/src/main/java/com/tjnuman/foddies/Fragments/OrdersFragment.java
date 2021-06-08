@@ -33,14 +33,15 @@ public class OrdersFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        onSetNavigationDrawerEvents();
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_orders, container, false);
-
+        view = inflater.inflate(R.layout.fragment_orders, container, false);
+        onSetNavigationDrawerEvents();
+        return view;
     }
 
     private void onSetNavigationDrawerEvents() {
