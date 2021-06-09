@@ -2,65 +2,90 @@ package com.tjnuman.foddies.Fragments;
 
 import android.os.Bundle;
 
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import com.google.android.material.navigation.NavigationView;
 import com.tjnuman.foddies.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link GoOutFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class GoOutFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+public class GoOutFragment extends Fragment implements View.OnClickListener {
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public GoOutFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment GoOutFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static GoOutFragment newInstance(String param1, String param2) {
-        GoOutFragment fragment = new GoOutFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    DrawerLayout drawerLayout;
+    ImageView navigationBar;
+    NavigationView navigationView;
+    View  view;
+    RelativeLayout LoginSingup,bookmarks;
+    TextView yourOrder,yourfavorite,addressbook,onlineHelp,feedBack,Report,Rateus;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_go_out, container, false);
+        view = inflater.inflate(R.layout.fragment_go_out, container, false);
+        onSetNavigationDrawerEvents();
+        return view;
+    }
+    private void onSetNavigationDrawerEvents() {
+        drawerLayout =  view.findViewById(R.id.drawerLayout);
+        navigationView = view.findViewById(R.id.navigationView);
+        navigationBar = (ImageView) view.findViewById(R.id.navigationBar);
+        LoginSingup = view.findViewById(R.id.relativeLayout2);
+        bookmarks = view.findViewById(R.id.relativeLayout3);
+        yourOrder = view.findViewById(R.id.YourOrder);
+        yourfavorite = view.findViewById(R.id.yourFavorite);
+        addressbook = view.findViewById(R.id.addressBook);
+        onlineHelp = view.findViewById(R.id.OnlineHelp);
+        feedBack = view.findViewById(R.id.feedback);
+        Report = view.findViewById(R.id.Report);
+        Rateus = view.findViewById(R.id.RateUs);
+
+        navigationBar.setOnClickListener(this);
+        LoginSingup.setOnClickListener(this);
+        bookmarks.setOnClickListener(this);
+        yourfavorite.setOnClickListener(this);
+        yourOrder.setOnClickListener(this);
+        addressbook.setOnClickListener(this);
+        onlineHelp.setOnClickListener(this);
+        feedBack.setOnClickListener(this);
+        Report.setOnClickListener(this);
+        Rateus.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.navigationBar:
+                drawerLayout.openDrawer(navigationView, true);
+                break;
+
+//            case R.id.tv_one:
+//                Toast.makeText(getContext(), "One", Toast.LENGTH_SHORT).show();
+//                break;
+//            case R.id.tv_two:
+//                Toast.makeText(getContext(), "Two", Toast.LENGTH_SHORT).show();
+//                break;
+        }
+    }
+
+    private void showToast(String message){
+        //Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 }
