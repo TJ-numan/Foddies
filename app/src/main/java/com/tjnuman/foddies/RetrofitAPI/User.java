@@ -1,9 +1,9 @@
 package com.tjnuman.foddies.RetrofitAPI;
 
 public class User {
-    @SerialzedName("response");
+//    @SerialzedName("response");
     String Response;
-    @SerialzedName("user_id");
+ //   @SerialzedName("user_id");
     String UserId;
 
     public String getResponse() {
