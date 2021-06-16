@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this,EmailRegisterActivity.class);
+                Intent intent = new Intent(MainActivity.this, EmailLoginActivity.class);
                 startActivity(intent);
                 finish();
             }

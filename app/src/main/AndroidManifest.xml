@@ -3,6 +3,7 @@
     package="com.tjnuman.foddies">
 
     <application
+
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,8 +13,8 @@
         android:theme="@style/Theme.Foddies">
         <activity android:name=".HomeActivity"></activity>
         <activity android:name=".PhoneRegisterActivity" />
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".EmailRegisterActivity" />
+        <activity android:name=".EmailRegistrationActivity" />
+        <activity android:name=".EmailLoginActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
