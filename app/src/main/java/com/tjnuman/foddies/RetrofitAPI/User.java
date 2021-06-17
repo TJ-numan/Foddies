@@ -1,9 +1,10 @@
 package com.tjnuman.foddies.RetrofitAPI;
-
+import com.google.gson.annotations.SerializedName;
 public class User {
-//    @SerialzedName("response");
+    @SerializedName("response")
     String Response;
- //   @SerialzedName("user_id");
+
+    @SerializedName("user_id")
     String UserId;
 
     public String getResponse() {

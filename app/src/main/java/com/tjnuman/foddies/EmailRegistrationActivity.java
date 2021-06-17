@@ -3,6 +3,7 @@ package com.tjnuman.foddies;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class EmailRegistrationActivity extends AppCompatActivity {
+    private static final String TAG = "reg_res";
     EditText userName, userPassword, userEmail, retypepassword;
     Button signupbtn;
     APiInterface aPiInterface;
@@ -106,14 +108,24 @@ public class EmailRegistrationActivity extends AppCompatActivity {
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
+                Log.d(TAG, "response: "+response.body().getResponse());
+                Log.d(TAG, "user_id: "+response.body().getUserId());
+                User user = response.body();
+                if(user == null) Log.d(TAG, "onResponse: pojo is null");
+                Log.d(TAG, "onResponse: user_res: "+user.getResponse());
                 if(response.body().getResponse().equals("ok")){
-                    Toast.makeText(EmailRegistrationActivity.this, "Successfully Registerd ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EmailRegistrationActivity.this, "Registration Complete", Toast.LENGTH_SHORT).show();
                 }
                 else if(response.body().getResponse().equals("failed")){
-                    Toast.makeText(EmailRegistrationActivity.this, "Something went wrong, please try again", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EmailRegistrationActivity.this,  "Registration failed", Toast.LENGTH_SHORT).show();
                 }
                 else if(response.body().getResponse().equals("already")){
-                    Toast.makeText(EmailRegistrationActivity.this, "An account with this email already registerd", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EmailRegistrationActivity.this,  "Already Registered", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+
+                    Toast.makeText(EmailRegistrationActivity.this,  "Something went wrong", Toast.LENGTH_SHORT).show();
                 }
             }
 
